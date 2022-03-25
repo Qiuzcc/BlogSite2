@@ -1,0 +1,54 @@
+extend layout 
+
+block content
+  #banner 
+    #slogan 博约而观取，厚积而薄发
+    i.fa.fa-arrow-down.fa-2x
+
+  #home-main
+    #home-sidebar
+      #author-card.py-5.mx-5
+        img.my-4(src="/res/bg.png" alt="")
+        h4.my-3 timegogo
+        p 这是一段个人描述
+        ul.list-unstyled.my-3
+          li.mx-3
+            a(href="" style="color:black")
+              i.fa.fa-github.fa-lg
+          li.mx-3 
+            a(href="" style="color:black")
+              i.fa.fa-wechat.fa-lg
+          li.mx-3  
+            a(href="" style="color:black")
+              i.fa.fa-weibo.fa-lg
+      #classifier-card.card
+        .card-header.h5.text-center 分 类
+        .card-body 
+          ul.list-group.list-group-flush
+            li.list-group-item 
+              | <a href=""> 学习笔记</a><span class="article-count"><small>13</small></span>
+            li.list-group-item 
+              | <a href=""> 学习笔记</a><span class="article-count"><small>13</small></span>
+            li.list-group-item 
+              | <a href=""> 学习笔记</a><span class="article-count"><small>13</small></span>
+
+    #home-board
+      ul#article-list.list-unstyled 
+        li 
+          .card.mb-3#article
+            img.card-img-top(src="/images/article/default.jpg" alt="") 
+            .card-body 
+              h5.card-title.px-4 水调歌头·明月几时有
+              p.card-text.my-4.px-4 明月几时有？把酒问青天。不知天上宫阙，今夕是何年。我欲乘风归去，又恐琼楼玉宇，高处不胜寒。起舞弄清影，何似在人间。
+              p.card-text.px-4
+                small.text-muted 苏轼 〔宋代〕
+        li 
+          .card.mb-3#article
+            img.card-img-top(src="/images/article/default.jpg" alt="") 
+            .card-body 
+              h5.card-title.px-4 水调歌头·明月几时有
+              p.card-text.my-4.px-4 明月几时有？把酒问青天。不知天上宫阙，今夕是何年。我欲乘风归去，又恐琼楼玉宇，高处不胜寒。起舞弄清影，何似在人间。
+              p.card-text.px-4
+                small.text-muted 苏轼 〔宋代〕
+
+
