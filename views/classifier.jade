@@ -1,0 +1,29 @@
+extend layout
+
+block content 
+    #classifier-banner
+        if(!empty)
+            #classifier-banner-line
+                a(href="/article/prev/"+classifier.classifier)
+                    i.fa.fa-chevron-left.fa-2x
+                h5 #{classifier.classifier}
+                a(href="/article/next/"+classifier.classifier)
+                    i.fa.fa-chevron-right.fa-2x
+            small.text-center.text-white.my-2 #{classifier.number} 篇
+
+    #classifier-board
+        ul.list-unstyled 
+            each item in articles
+                li.my-3
+                    .card.p-2
+                        .row 
+                            .col-4 
+                                a(href="/article/"+item._id)
+                                    img(src=item.picture alt="")
+                            .col-8 
+                                .card-body
+                                    h5.card-title #{item.title}
+                                    p.card-text #{item.content}
+                                    p.card-text
+                                        small.text-muted #{item.date}
+

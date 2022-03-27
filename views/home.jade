@@ -1,0 +1,45 @@
+extend layout 
+
+block content
+  #banner 
+    #slogan 博约而观取，厚积而薄发
+    i.fa.fa-arrow-down.fa-2x
+
+  #home-main
+    #home-sidebar
+      #author-card.py-5.mx-5
+        img.my-4(src="/res/bg.png" alt="")
+        h4.my-3 #{people.name}
+        p #{people.description}
+        ul.list-unstyled.my-3
+          li.mx-3
+            a(href=people.github style="color:black" target="_blank")
+              i.fa.fa-github.fa-lg
+          li.mx-3 
+            a(href="" style="color:black")
+              i.fa.fa-wechat.fa-lg
+          li.mx-3  
+            a(href=people.weibo style="color:black" target="_blank")
+              i.fa.fa-weibo.fa-lg
+      #classifier-card.card
+        .card-header.h5.text-center 分 类
+        .card-body 
+          ul.list-group.list-group-flush
+            each item in classifier
+              li.list-group-item 
+                a(href="/article/cur/"+item.classifier) #{item.classifier}
+                  span.article-count
+                    small #{item.number}
+
+    #home-board
+      ul#article-list.list-unstyled 
+        each item in articles 
+          li
+            .card.mb-3#article
+              a(href="/article/"+item._id)
+                img.card-img-top(src=item.picture alt="") 
+              .card-body 
+                h5.card-title.px-4 #{item.title}
+                p.card-text.my-4.px-4 #{item.abstract}
+                p.card-text.px-4
+                  small.text-muted #{item.date}

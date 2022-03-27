@@ -9,11 +9,12 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-const mongoose = require('mongoose');               // 导入 mongoose 模块
-const mongoDB = 'mongodb://127.0.0.1/blog_database';// 设置默认 mongoose 连接
+const mongoose = require('mongoose');                 // 导入 mongoose 模块
+const mongoDB = 'mongodb://127.0.0.1/blog_database2'; // 设置默认 mongoose 连接
 mongoose.connect(mongoDB);
-mongoose.Promise = global.Promise;                  // 让 mongoose 使用全局 Promise 库
-const db = mongoose.connection;                     // 取得默认连接
+mongoose.Promise = global.Promise;                    // 让 mongoose 使用全局 Promise 库
+const db = mongoose.connection;                       // 取得默认连接
+console.log("mongoose connect");
 db.on('error', console.error.bind(console, 'MongoDB 连接错误：'));  // 将连接与错误事件绑定（以获得连接错误的提示）
 
 // view engine setup

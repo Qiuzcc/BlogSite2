@@ -1,0 +1,32 @@
+extend layout
+
+block content 
+    #carouselExampleCaptions.carousel.slide(data-bs-ride="carousel")
+        .carousel-inner
+            ul.list-unstyled 
+                each item in photos
+                    li 
+                        .carousel-item.active   
+                            img.d-block.w-100(src=item.file, alt="")
+                            .carousel-caption.d-none.d-md-block 
+                                h5 #{item.title}
+                                p #{item.description}
+        button.carousel-control-prev(type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev")
+            span.carousel-control-prev-icon(aria-hidden="true")
+        button.carousel-control-next(type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next")
+            span.carousel-control-next-icon(aria-hidden="true")
+
+    #photos-title-1.m-5
+        h4.text-center ---- 最 新 照 片 ----
+
+    #photos-list.row.row-cols-3.g-4
+        ul.list-unstyled 
+            each item in photos
+                li
+                    .col 
+                        .card
+                            a(href="/photos/"+item._id, target="_blank") 
+                                img.card-img-top(src=item.file alt="")
+                            .card-body 
+                                h5.card-title #{item.title}
+                                p.card-text  #{item.description}

@@ -1,7 +1,19 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet" href="/bootstrap-5.1.3/css/bootstrap.min.css" crossorigin="anonymous")
+    link(rel="stylesheet", href="/font-awesome-4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+
   body
-    block content
+    script(src="/bootstrap-5.1.3/js/bootstrap.bundle.min.js") 
+    .container-fluid
+      #topBar
+        #topBarTitle timegogo
+        nav#topBarLink.nav.justify-content-center.align-items-center
+          a.nav-link.active(aria-current="page" href="/") 首页
+          a.nav-link(href="/article") 分类
+          a.nav-link(href="/photos") 照片
+          a.nav-link(href="#") 管理
+
+      block content

@@ -1,14 +1,29 @@
-
+const Photos = require('../models/photos');
 
 /*----------------------------前台管理器----------------------------*/
 /* 照片展示页管理器 */
 exports.home = function(req,res){
+    
+    const viewModel = {photos:[]};
 
+    Photos.find({},{},function(err,result){
+        if(err) throw err;
+        viewModel.photos = result;
+        res.render('photos',viewModel);
+    })
+    
 };
 
 /* 照片详情页管理器 */
 exports.detail = function(req,res){
 
+    const viewModel = {photo:{}};
+    Photos.findOne({'_id':req.params.id},{},function(err,result){
+        if(err) throw err;
+        viewModel.photo = result;
+        console.log(viewModel);
+        res.render('photo_detail',viewModel);
+    })
 };
 
 
