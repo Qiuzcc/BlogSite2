@@ -8,11 +8,11 @@ var people = require("../controllers/peopleController");
 
 router.get('/', home.home);
 
+router.get('/article',article.classifier);
+router.get('/article/cur/:name',article.classifier_cur);
+router.get('/article/prev/:name',article.classifier_prev);
+router.get('/article/next/:name',article.classifier_next);
 router.get('/article/:id',article.detail);
-router.get('/article/classifier',article.classifier);
-router.get('/article/classifier/study',article.classifier_study);
-router.get('/article/classifier/life',article.classifier_life);
-router.get('/article/classifier/other',article.classifier_other);
 
 router.get('/photos',photo.home);
 router.get('/photos/:id',photo.detail);
