@@ -1,0 +1,31 @@
+extend manage 
+
+block content 
+    #manage_board
+        form(action="/manage/photos/"+_id+"/update" method="POST" id="photo_update_form")
+            .row.g-3 
+                .col-1.mx-2
+                .col-auto
+                    img(src=file alt="" style="height:30vh;object-fit:cover;")
+            .row.g-3 
+                .col-1.text-end.mx-2 
+                    label.col-form-label(for="title") 标题
+                .col-auto
+                    input.form-control(name="title" type="text" value=title)
+            .row.g-3 
+                .col-1.text-end.mx-2 
+                    label.col-form-label(for="description") 描述
+                .col-auto 
+                    textarea.form-control(name="description", cols="30", rows="10") #{description}
+        .row.g-3 
+            .col-1.mx-2
+            .col-auto   
+                input.btn.btn-primary(type="submit" form="photo_update_form")
+            .col-auto 
+                a.btn.btn-warning(href="/manage/photos") 取消
+            .col-auto
+                a.btn.btn-danger.fa.fa-trash(href="/manage/photos/"+_id+"/delete")
+                
+                        
+
+            

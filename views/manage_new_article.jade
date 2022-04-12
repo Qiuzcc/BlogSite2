@@ -1,0 +1,37 @@
+extend manage
+
+block content
+    #manage_board
+        form(action="/manage/new/article" method="POST" enctype="multipart/form-data")
+            .row.g-3    
+                .col-1.text-end.mx-2 
+                    label.col-form-label(for="title") 标题 
+                .col-auto 
+                    input(type="text" name="title")
+            .row.g-3    
+                .col-1.text-end.mx-2 
+                    label.col-form-label(for="classification") 分类
+                .col-auto 
+                    input(type="text" name="classification")
+            .row.g-3    
+                .col-1.text-end.mx-2 
+                    label.col-form-label(for="abstract")  摘要
+                .col-auto 
+                    textarea(name="abstract", cols="30", rows="10") 
+            .row.g-3    
+                .col-1.text-end.mx-2 
+                    label.col-form-label(for="content")  内容
+                .col-auto 
+                    textarea(name="content", cols="30", rows="10") 
+            .row.g-3    
+                .col-1.text-end.mx-2 
+                    label.col-form-label(for="picture") 图片
+                .col-auto 
+                    input(type="file" name="picture")
+            .row.g-3 
+                .col-1.mx-2
+                .col-1
+                    input.btn.btn-primary(type="submit" value="发布")
+                .col-1
+                    a.btn.btn-warning(href="/manage") 取消
+            

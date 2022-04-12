@@ -1,0 +1,46 @@
+extend manage
+
+block content
+
+    #manage_board
+        form(action="/manage/people" method="POST" enctype="multipart/form-data")
+            .row.g-3
+                .col-1.text-end.mx-2
+                    label.col-form-label(for="portrait") 头像
+                .col-auto 
+                    img(style="height:100px;width:100px;object-fit:cover" src=people.photo)
+                .col-auto
+                    input(type="file" name="portrait" id="manage_people_portrait" style="visibility: hidden" accept=".png,.jpeg,.jpg,.gif")
+            .row.g-3.align-items-center 
+                .col-1.text-end.mx-2
+                    label.col-form-label(for="name") 昵称
+                .col-3
+                    input.form-control(id="manage_people_name" name="name" type="text" value=people.name readonly)
+            .row.g-3
+                .col-1.text-end.mx-2
+                    label.col-form-label(for="description") 简介
+                .col-auto 
+                    textarea(name="description", cols="50", rows="2" readonly id="manage_people_description") #{people.description}
+            .row.g-3.align-items-center 
+                .col-1.text-end.mx-2
+                    label.col-form-label(for="github") github
+                .col-3
+                    input.form-control(id="manage_people_github" name="github" type="text" value=people.github readonly)
+            .row.g-3.align-items-center 
+                .col-1.text-end.mx-2
+                    label.col-form-label(for="weibo") 微博
+                .col-3
+                    input.form-control(id="manage_people_weibo" name="weibo" type="text" value=people.weibo readonly)
+            .row.g-3
+                .col-1.text-end.mx-2
+                    label.col-form-label(for="wechat") 微信
+                .col-auto 
+                    img(style="height:100px;width:100px;object-fit:cover" src=people.wechat)
+                .col-auto
+                    input(type="file",name="wechat" style="visibility: hidden" id="manage_people_wechat" accept=".png,.jpeg,.jpg,.gif")
+            .row.g-3
+                .col-4.text-center
+                    input.btn.btn-primary(type="button" value="修改" style="padding:5px 0;width:75px" id="manage_people_change")
+                    input.btn.btn-primary.mx-2(type="submit" value="提交" style="padding:5px 0;width:75px" id="manage_people_submit" disabled)
+    
+    script(src="/javascripts/manage_people.js") 
