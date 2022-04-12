@@ -1,0 +1,23 @@
+extend manage
+
+block content
+    #manage_board
+        nav.navbar.navbar-light.m-2 
+            form(action="/manage/article" method="POST").d-flex 
+                select(name="classifier")
+                    each item in classifier 
+                        option(value=item.classifier) #{item.classifier}  
+                button.btn.btn-outline-success.mx-2(type="submit") 搜索 
+        each item in articles
+            .card.p-2.m-2
+                .row 
+                    .col-2 
+                        a(href="/manage/article/detail/"+item._id)
+                            img(src=item.picture alt="" style="max-width: 100%")
+                    .col-10 
+                        .card-body
+                            h5.card-title #{item.title} 
+                            p.card-text #{item.abstract}
+                            p.card-text
+                                i.fa.fa-tag.mx-2
+                                small.text-muted.d-inline #{item.classification}

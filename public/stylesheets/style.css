@@ -303,3 +303,64 @@ body{
   opacity: 1;
   left:0;
 }
+
+
+/*---------------后台管理页 侧边栏---------------*/
+#manage{
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+#manage_sidebar{
+  /* background-color: burlywood; */
+  height: 100vh;
+  min-width: 250px;
+  padding: 200px 20px;
+}
+
+#manage_sidebar_line{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  padding: 10px 10px;
+}
+
+#manage_sidebar_line:hover{
+  background-color: rgba(233,236,239,0.5);
+}
+
+#manage_sidebar_line p{
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+#manage_sidebar_line i{
+  color: #6c757d;
+}
+
+#manage_sidebar ul{
+  font-size: 0.9rem;
+}
+#manage_sidebar li{
+  padding-left: 50px;
+  margin-top: 0.5rem;
+}
+#manage_sidebar li:hover{
+  background-color: rgba(233,236,239,0.5);
+}
+
+#manage_sidebar a{
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/*---------------后台管理页 面板---------------*/
+#manage_board{
+  background-color: white;
+  height: calc(100vh - 80px);
+  width: 80vw;
+  min-width: 750px;
+  margin-top: 80px;
+}

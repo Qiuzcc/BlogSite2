@@ -1,0 +1,12 @@
+extend manage 
+
+block content 
+    #manage_board
+        .row.g-4.row-cols-3
+            each item in photos 
+                .col 
+                    .card 
+                        a(href="/manage/photos/"+item._id)
+                            img.card-img-top(src=item.file alt="")
+                        .card-body 
+                            h5.card-title.text-end #{item.title}

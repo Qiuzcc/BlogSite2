@@ -1,0 +1,40 @@
+extend manage
+
+block content
+    #manage_board
+        form(action="/manage/article/detail/"+article._id+"/update" method="POST" enctype="multipart/form-data")
+            .row.g-3    
+                .col-1.text-end.mx-2 
+                    label.col-form-label(for="title") 标题 
+                .col-5
+                    input(type="text" name="title" value=article.title style="width:100%;")
+            .row.g-3   
+                .col-1.text-end.mx-2 
+                    label.col-form-label(for="classification") 分类
+                .col-3
+                    input(type="text" name="classification" value=article.classification style="width:100%;" list="classifier_list")
+            .row.g-3    
+                .col-1.text-end.mx-2 
+                    label.col-form-label(for="abstract")  摘要
+                .col-auto 
+                    textarea(name="abstract", cols="120", rows="3") #{article.abstract}
+            .row.g-3    
+                .col-1.text-end.mx-2 
+                    label.col-form-label(for="content")  内容
+                .col-auto 
+                    textarea(name="content", cols="120", rows="8") #{article.content}
+            .row.g-3    
+                .col-1.text-end.mx-2 
+                    label.col-form-label(for="picture") 图片
+                .col-auto 
+                    img(src=article.picture, alt="" style="height:240px;width:320px;object-fit:cover;")
+                .col-auto 
+                    input(type="file" name="picture")  
+            .row.g-3 
+                .col-1.mx-2
+                .col-1
+                    input.btn.btn-primary(type="submit" value="修改")
+                .col-1
+                    a.btn.btn-warning(href="/manage") 取消
+                .col-1 
+                    a.btn.btn-danger.fa.fa-trash(href="/manage/article/detail/"+article._id+"/delete")

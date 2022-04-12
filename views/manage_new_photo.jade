@@ -1,0 +1,24 @@
+extend manage 
+
+block content 
+    #manage_board
+        form(action="/manage/new/photo" method="POST" enctype="multipart/form-data")
+            .row.g-3
+                .col-1.text-end.mx-2
+                    label.col-form-label(for="photo") 照片
+                .col-auto
+                    input.form-control(type="file" name="photo" accept=".png,.jpeg,.jpg,.gif")
+            .row.g-3
+                .col-1.text-end.mx-2
+                    label.col-form-label(for="title") 标题
+                .col-auto
+                    input.form-control(type="text" name="title")
+            .row.g-3 
+                .col-1.text-end.mx-2
+                    label.col-form-label(for="description") 描述
+                .col-auto
+                    textarea.form-control(name="description", cols="30", rows="10") 
+            .row.g-3 
+                .col-1.mx-2
+                .col-1
+                    input.btn.btn-primary(type="submit" value="上传")

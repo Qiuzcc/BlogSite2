@@ -1,0 +1,47 @@
+doctype html
+html
+    head
+        link(rel="stylesheet" href="/bootstrap-5.1.3/css/bootstrap.min.css" crossorigin="anonymous")
+        link(rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css")
+        link(rel="stylesheet" href="/stylesheets/style.css")
+
+    body
+        script(src="/bootstrap-5.1.3/js/bootstrap.bundle.min.js") 
+        .container-fluid
+            #topBar
+                #topBarTitle timegogo
+                nav#topBarLink.nav.justify-content-center.align-items-center
+                    a.nav-link.active(aria-current="page" href="/") 首页
+                    a.nav-link(href="/article") 分类
+                    a.nav-link(href="/photos") 照片
+                    a.nav-link(href="/manage") 管理
+
+            #manage
+                #manage_sidebar
+                    a(href="/manage/people")
+                        #manage_sidebar_line
+                            #manage_sidebar_line_left
+                                i.fa.fa-address-book-o
+                                p.d-inline.mx-3 个人信息
+                    a(href="/manage")
+                        #manage_sidebar_line
+                            #manage_sidebar_line_left
+                                i.fa.fa-file-text-o
+                                p.d-inline.mx-3 文章
+                    a(href="/manage/photos")
+                        #manage_sidebar_line
+                            #manage_sidebar_line_left
+                                i.fa.fa-photo
+                                p.d-inline.mx-3 照片
+                    #manage_sidebar_line(data-bs-toggle="collapse" href="#manage_sidebar_new" role="button" aria-expanded="false" aria-controls="#manage_sidebar_new")
+                        #manage_sidebar_line_left
+                            i.fa.fa-paper-plane-o
+                            p.d-inline.mx-3 发布
+                        i.fa.fa-angle-down
+                    ul#manage_sidebar_new.list-unstyled 
+                        li 
+                            a(href="/manage/new/article") 文章
+                        li 
+                            a(href="/manage/new/photo") 照片
+
+                block content
