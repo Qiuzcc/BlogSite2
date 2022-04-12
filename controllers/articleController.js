@@ -44,7 +44,6 @@ exports.classifier_cur = function (req, res) {
         if (err) throw err;
         viewModel.classifier = result[0];
         viewModel.articles = result[1];
-        console.log(viewModel);
         res.render('classifier', viewModel);
     })
 
@@ -243,10 +242,10 @@ exports.manage_detail_update = function (req, res) {
 exports.manage_detail_delete = function (req, res) {
 
     async function deleteArticle() {
-        console.log("req.params.id",req.params.id)
+        //console.log("req.params.id",req.params.id)
         let article = await Article.findById(req.params.id);
         article_classifier = article.classification;
-        console.log("article_classifier",article_classifier);
+        //console.log("article_classifier",article_classifier);
         let classifier = await Article_classifier.findOne({ classifier: article_classifier });
         classifier.number -= 1;
         if (classifier.number === 0) {
